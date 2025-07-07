@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title class="header-title">🎬 Movies ESPAM</ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="user-menu-button" fill="clear">
+        <ion-icon name="person-circle-outline" slot="icon-only" color="light">        {{username}}
+</ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar color="medium" class="search-toolbar">
+    <ion-item lines="none" class="search-row">
+      <ion-searchbar
+        #movies
+        (keyup.enter)="searchMovies(movies)"
+        placeholder="Buscar por título, actor o género..."
+        class="custom-searchbar">
+      </ion-searchbar>
+
+      <ion-select [(ngModel)]="tipoBusqueda" (ionChange)="searchMovies(movies)" interface="popover" class="custom-select">
+        <ion-select-option value="pelicula">🎬 Película</ion-select-option>
+        <ion-select-option value="actor">👤 Actor</ion-select-option>
+        <ion-select-option value="genero">🎭 Género</ion-select-option>
+      </ion-select>
+
+      <ion-select *ngIf="tipoBusqueda === 'genero'" [(ngModel)]="generoSeleccionado" (ionChange)="searchMovies(movies)" placeholder="Selecciona un género" class="custom-select">
+        <ion-select-option *ngFor="let genero of listaGeneros" [value]="genero.id">
+          {{ genero.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-popover trigger="user-menu-button" triggerAction="click" [dismissOnSelect]="true">
+  <ng-template>
+    <ion-content class="popover-content">
+      <ion-list>
+        <ion-item lines="none">
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-label>{{ username }}</ion-label>
+        </ion-item>
+        <ion-item button (click)="logout()" color="danger">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon>
+          <ion-label>Cerrar sesión</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+
+<ion-content [fullscreen]="true" class="results-content">
+  <ng-container *ngIf="searchResults.length > 0; else noData">
+    <ion-toolbar color="dark">
+      <ion-title class="results-title">🎞️ Resultados de búsqueda</ion-title>
+    </ion-toolbar>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="4" size-lg="3" *ngFor="let item of searchResults">
+          <ion-card class="movie-card" [routerLink]="['/detail', item.id]">
+            <img [src]="item.poster_path ? 'https://image.tmdb.org/t/p/w500' + item.poster_path : 'assets/img/default-poster.avif'" />
+            <ion-card-header>
+              <ion-card-title>{{ item.title || item.name }}</ion-card-title>
+              <ion-card-subtitle>{{ item.release_date || '' }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content class="card-content">
+              {{ item.overview || '' }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-infinite-scroll threshold="100px" [disabled]="buscando" (ionInfinite)="searchMovies(null, $event)">
+      <ion-infinite-scroll-content loadingSpinner="dots" loadingText="Cargando más resultados..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ng-container>
+
+  <ng-template #noData>
+    <div style="text-align: center; margin-top: 2rem;">
+      <ion-text color="medium">No se encontraron resultados.</ion-text>
+    </div>
+  </ng-template>
+</ion-content>

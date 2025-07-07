@@ -1,0 +1,51 @@
+/* Fondo negro detrás de las películas */
+.content-premiere {
+  --background: #000000;
+  background-color: #000 !important;
+  padding: 1rem;
+}
+
+/* Barra de navegación superior con borde naranja */
+.toolbar-premiere {
+  --background: #000000;
+  border-bottom: 2px solid #ff6a00;
+  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.5);
+}
+
+/* Título "Premiere" en naranja fuerte */
+.title-premiere {
+  color: #ff6a00;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* Tarjetas de las películas con borde y sombra naranja */
+.card-premiere {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #ff6a00;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card-premiere:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 106, 0, 0.6);
+}
+
+/* Título y fecha en blanco o naranja claro para contraste */
+.card-premiere ion-card-title {
+  color: #ffcc80;
+  font-weight: bold;
+}
+
+.card-premiere ion-card-subtitle {
+  color: #ffb74d;
+}
+
+.card-premiere ion-card-content {
+  color: #e0e0e0;
+  font-size: 0.85rem;
+}

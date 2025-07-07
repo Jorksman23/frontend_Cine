@@ -1,0 +1,33 @@
+<ion-header class="header-cartelera">
+  <ion-toolbar class="toolbar-cartelera">
+    <ion-title class="title-cartelera">PELÍCULAS EN CARTELERA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-cartelera">
+  <ion-spinner *ngIf="peliculas.length === 0 && cargando" class="spinner-center" name="crescent"></ion-spinner>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="6" size-md="4" *ngFor="let peli of peliculas">
+        <ion-card class="card-cartelera">
+          <img [src]="'https://image.tmdb.org/t/p/w500' + peli.poster_path" alt="poster" class="poster-img" />
+          <ion-card-header>
+            <ion-card-title class="card-title-cartelera">{{ peli.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="card-content-cartelera">
+            <p><strong>Fecha:</strong> {{ peli.release_date }}</p>
+            <p>{{ peli.overview }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="cargarPeliculas($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando más películas...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

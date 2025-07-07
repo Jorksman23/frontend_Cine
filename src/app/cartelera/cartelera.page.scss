@@ -1,0 +1,51 @@
+/* Fondo general negro */
+.content-cartelera {
+  --background: #000000;
+  background-color: #000 !important;
+  padding: 1rem;
+}
+
+/* Barra superior estilo cine */
+.toolbar-cartelera {
+  --background: #000000;
+  border-bottom: 2px solid #ff6a00;
+  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.5);
+}
+
+.title-cartelera {
+  color: #ff6a00;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* Tarjeta de cada película con bordes y estilo naranja */
+.card-cartelera {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #ff6a00;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card-cartelera:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 106, 0, 0.5);
+}
+
+.card-title-cartelera {
+  color: #ffa500;
+  font-weight: bold;
+}
+
+.card-content-cartelera p {
+  color: #eeeeee;
+  font-size: 0.85rem;
+}
+
+.spinner-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}

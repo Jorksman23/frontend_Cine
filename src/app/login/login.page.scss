@@ -1,0 +1,161 @@
+// Fondo tipo Netflix
+.login-content {
+  --background: none;
+  background: url('/assets/img/netflix-bg.jpg') no-repeat center center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+// Capa de oscurecimiento + centrado
+.login-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+// Contenedor principal
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  z-index: 2;
+}
+
+// Icono y título
+.login-logo ion-icon {
+  font-size: 60px;
+  color: #ff2e63;
+  filter: drop-shadow(0 0 10px rgba(255, 46, 99, 0.6));
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.login-subtitle {
+  color: #ccc;
+  font-size: 14px;
+  margin-top: -4px;
+}
+
+// Tarjeta del formulario
+.login-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+
+  ion-card-content {
+    padding: 30px 20px;
+  }
+}
+
+// Inputs
+.input-item {
+  margin-bottom: 20px;
+  --border-radius: 14px;
+  --background: rgba(255, 255, 255, 0.1);
+  --color: white;
+
+  .input-icon {
+    color: #ccc;
+  }
+}
+
+.custom-input {
+  --padding-start: 10px;
+  color: #fff;
+}
+
+.password-toggle {
+  --color: #ccc;
+}
+
+// Botón de login
+.login-button {
+  margin-top: 20px;
+  --background: linear-gradient(135deg, #ff2e63 0%, #8a2be2 100%);
+  --border-radius: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  height: 48px;
+  box-shadow: 0 6px 14px rgba(255, 46, 99, 0.3);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+// Línea divisoria
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #aaa;
+
+  &:before,
+  &:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #444;
+  }
+
+  span {
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+// Link de olvidar contraseña
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+
+  ion-button {
+    font-size: 13px;
+    color: #ff2e63;
+  }
+}
+
+// Link final
+.signup-link {
+  margin-top: 20px;
+
+  p {
+    color: #ccc;
+    font-size: 14px;
+  }
+
+  ion-button {
+    --color: #fff;
+    text-decoration: underline;
+    margin-left: 4px;
+    font-weight: 500;
+  }
+}
+
+// Responsive
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-subtitle {
+    font-size: 13px;
+  }
+}

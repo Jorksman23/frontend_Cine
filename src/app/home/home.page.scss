@@ -1,0 +1,72 @@
+/* Fondo oscuro general */
+.results-content {
+  --background: #000;
+  background-color: #000 !important;
+}
+
+/* Título con "Movies" naranja y "ESPAM" verde */
+.title-home {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.orange-text {
+  color: #ff3c00;
+}
+
+.green-text {
+  color: #fff200;
+}
+
+/* Barra superior estilo cine */
+.toolbar-home {
+  --background: linear-gradient(to right, #000000, #1a0000);
+  border-bottom: 2px solid #ff3c00;
+  box-shadow: 0 2px 10px rgba(255, 69, 0, 0.5);
+}
+
+/* Resultados: barra y título */
+.results-toolbar {
+  --background: linear-gradient(to right, #000000, #1a0000);
+  border-bottom: 2px solid #ff3c00;
+  box-shadow: 0 2px 10px rgba(255, 69, 0, 0.5);
+}
+
+.results-title {
+  color: #ff3c00;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 4px #000;
+  letter-spacing: 1px;
+}
+
+/* Tarjetas con efecto cine */
+.movie-card {
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #ff6a00;
+  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 106, 0, 0.6);
+}
+
+.card-title {
+  color: #ffb84d;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  color: #ffa500;
+}
+
+.card-content {
+  color: #dddddd;
+  font-size: 0.85rem;
+}

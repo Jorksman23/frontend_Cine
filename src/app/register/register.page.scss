@@ -1,0 +1,81 @@
+.register-content {
+  --background: none;
+  background: url('/assets/img/netflix-bg.jpg') no-repeat center center / cover;
+  position: relative;
+  color: white;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(10, 10, 10, 0.6)); // MENOS opaco
+  z-index: 0;
+}
+
+.register-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  min-height: 100vh;
+}
+
+.register-header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+
+  .register-logo ion-icon {
+    font-size: 3.5rem;
+    color: #ff3d71;
+    filter: drop-shadow(0 0 10px rgba(255, 61, 113, 0.5));
+  }
+
+  .register-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .register-subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+  }
+}
+
+.register-card {
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(20px);
+  --background: rgba(255, 255, 255, 0.05); // Más transparente
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.input-item {
+  --background: rgba(255, 255, 255, 0.03);
+  --border-radius: 12px;
+  margin-bottom: 16px;
+
+  ion-icon {
+    color: #ccc;
+  }
+
+  ion-input {
+    color: white;
+  }
+}
+
+.register-button {
+  --background: #ff3d71;
+  --border-radius: 16px;
+  font-weight: bold;
+  margin-top: 18px;
+}
